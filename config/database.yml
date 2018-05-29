@@ -19,4 +19,8 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV.fetch('DB_NAME') %>
+  username: <%= ENV.fetch('DB_USER') %>
+  password: <%= ENV.fetch('DB_PASSWORD') %>
+  host: "127.0.0.1"
+  port: 5432
